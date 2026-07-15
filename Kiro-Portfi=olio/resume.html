@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darshan Sathish - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            font-size: 10.5pt;
+            line-height: 1.4;
+            color: #e8e8e8;
+            background: #1a1a2e;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in 0.6in;
+        }
+
+        a {
+            color: #64b5f6;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #4fc3f7;
+        }
+
+        .header h1 {
+            font-size: 26pt;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+
+        .header .tagline {
+            font-size: 11pt;
+            color: #4fc3f7;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .header .contact-line {
+            font-size: 10pt;
+            color: #b0bec5;
+        }
+
+        .header .contact-line a {
+            color: #4fc3f7;
+        }
+
+        .header .contact-line .separator {
+            margin: 0 8px;
+            color: #546e7a;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 11.5pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #4fc3f7;
+            border-bottom: 1px solid #37474f;
+            padding-bottom: 4px;
+            margin-bottom: 10px;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px 24px;
+            font-size: 10pt;
+        }
+
+        .skill-item {
+            color: #cfd8dc;
+        }
+
+        .skill-item .label {
+            color: #4fc3f7;
+            font-weight: 600;
+        }
+
+        /* Experience */
+        .exp-entry {
+            margin-bottom: 16px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .exp-header h3 {
+            font-size: 11.5pt;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .exp-header .date {
+            font-size: 9.5pt;
+            color: #78909c;
+        }
+
+        .exp-subheader {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10pt;
+            color: #4fc3f7;
+            margin-bottom: 6px;
+        }
+
+        .exp-bullets {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .exp-bullets li {
+            font-size: 10.5pt;
+            color: #cfd8dc;
+            margin-bottom: 4px;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .exp-bullets li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #4fc3f7;
+        }
+
+        .exp-bullets li strong {
+            color: #ffffff;
+        }
+
+        /* Projects */
+        .project-entry {
+            margin-bottom: 10px;
+        }
+
+        .project-entry h4 {
+            font-size: 10.5pt;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 2px;
+        }
+
+        .project-entry p {
+            font-size: 10pt;
+            color: #cfd8dc;
+            padding-left: 14px;
+        }
+
+        .project-tags {
+            padding-left: 14px;
+            margin-top: 2px;
+            font-size: 9pt;
+            color: #78909c;
+        }
+
+        /* Education */
+        .edu-entry {
+            margin-bottom: 10px;
+        }
+
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .edu-header h3 {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .edu-header .date {
+            font-size: 9.5pt;
+            color: #78909c;
+        }
+
+        .edu-detail {
+            font-size: 10pt;
+            color: #b0bec5;
+        }
+
+        .edu-courses {
+            font-size: 9.5pt;
+            color: #90a4ae;
+            margin-top: 2px;
+        }
+
+        /* Certs */
+        .cert-list {
+            list-style: none;
+            font-size: 10.5pt;
+        }
+
+        .cert-list li {
+            color: #cfd8dc;
+            margin-bottom: 4px;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .cert-list li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #4fc3f7;
+        }
+
+        .cert-list li strong {
+            color: #ffffff;
+        }
+
+        /* Page break */
+        .page-break {
+            page-break-before: always;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px dashed #37474f;
+        }
+
+        /* Print overrides */
+        @media print {
+            body {
+                background: white;
+                color: #1a1a1a;
+                padding: 0.4in 0.5in;
+            }
+            .header h1 { color: #1a1a1a; }
+            .header .tagline { color: #333; }
+            .header .contact-line { color: #333; }
+            .header .contact-line a { color: #0066cc; }
+            .header { border-bottom-color: #1a1a1a; }
+            .section-title { color: #1a1a1a; border-bottom-color: #ccc; }
+            .skills-grid .label { color: #1a1a1a; }
+            .skill-item { color: #333; }
+            .exp-header h3 { color: #1a1a1a; }
+            .exp-header .date { color: #555; }
+            .exp-subheader { color: #0066cc; }
+            .exp-bullets li { color: #222; }
+            .exp-bullets li::before { color: #0066cc; }
+            .exp-bullets li strong { color: #1a1a1a; }
+            .project-entry h4 { color: #1a1a1a; }
+            .project-entry p { color: #222; }
+            .project-tags { color: #666; }
+            .edu-header h3 { color: #1a1a1a; }
+            .edu-detail { color: #333; }
+            .edu-courses { color: #555; }
+            .cert-list li { color: #222; }
+            .cert-list li::before { color: #0066cc; }
+            .cert-list li strong { color: #1a1a1a; }
+            a { color: #0066cc; }
+            .page-break { border-top: none; margin-top: 0; padding-top: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== PAGE 1 ==================== -->
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>DARSHAN SATHISH</h1>
+        <p class="tagline">Cloud Security & Infrastructure Engineer</p>
+        <p class="contact-line">
+            269-364-0693<span class="separator">|</span><a href="mailto:darshansathish075@gmail.com">darshansathish075@gmail.com</a><span class="separator">|</span><a href="https://www.linkedin.com/in/darshansathish/">LinkedIn</a><span class="separator">|</span><a href="https://github.com/darshan">GitHub</a><span class="separator">|</span>Indiana, USA
+        </p>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item"><span class="label">Cloud & IaC:</span> AWS (EC2, EKS, ECS, RDS, ALB, CloudWatch), Terraform, CloudFormation, Infrastructure as Code (IaC), 3-Tier Architecture, Well-Architected Framework</div>
+            <div class="skill-item"><span class="label">Security:</span> IAM, AWS KMS, Secrets Manager, CloudTrail, Network Security, Encryption (at rest & in transit), Compliance & Governance</div>
+            <div class="skill-item"><span class="label">Containers:</span> Kubernetes, Amazon EKS, Docker, Microservices, VPC CNI Plugins, Container Networking, Helm</div>
+            <div class="skill-item"><span class="label">DevOps & CI/CD:</span> AWS CodePipeline, CodeBuild, CodeDeploy, Jenkins, GitHub Actions, Azure DevOps, Git</div>
+            <div class="skill-item"><span class="label">Networking:</span> TCP/IP, DNS, DHCP, Layer 1 & 2 Troubleshooting, Switch Build/Wipe/OS Install, Physical Security</div>
+            <div class="skill-item"><span class="label">Programming & Scripting:</span> Python, Bash, Go, YAML, JavaScript, Cron, Automation</div>
+            <div class="skill-item"><span class="label">Monitoring & SRE:</span> Grafana, Prometheus, CloudWatch, Pingdom, Kibana, Incident Response, Alerting</div>
+            <div class="skill-item"><span class="label">Datacenter:</span> Rack-and-Stack, Hardware Break-Fix, Equipment Lifecycle, SLA Management, SOPs</div>
+        </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section">
+        <h2 class="section-title">Professional Experience</h2>
+
+        <!-- AWS -->
+        <div class="exp-entry">
+            <div class="exp-header">
+                <h3>Datacenter Technician</h3>
+                <span class="date">May 2025 – Present</span>
+            </div>
+            <div class="exp-subheader">
+                <span>Amazon Web Services (AWS)</span>
+                <span>New Carlisle, IN</span>
+            </div>
+            <ul class="exp-bullets">
+                <li>Directed a team of <strong>8+ technicians</strong> to receive and hand off <strong>1,200 server racks</strong> in a single quarter, serving as the primary point of contact for the site's largest onboarding operation</li>
+                <li>Perform rack-and-stack, hardware break-fix, and switch build/wipe/OS installation across Trn2p, Trn3p, B300, and storage racks, maintaining <strong>99%+ SLA compliance</strong> on 50+ daily rack handoffs</li>
+                <li>Enforce physical security protocols, access controls, and secure decommissioning procedures, ensuring <strong>zero security incidents</strong> during high-volume installations</li>
+                <li>Developed Tampermonkey automation scripts that <strong>reduced manual receiving time by 40%</strong>, adopted site-wide as the standard workflow tool for hardware operations</li>
+                <li>Authored SOPs and Operational Readiness Documents now used across the entire cluster, standardizing site readiness and rack receiving procedures</li>
+                <li>Serve as designated OJT Lead for all new hires, building a cross-training program between Rack Handoff and Datacenter Operations (DCO) teams</li>
+                <li>Execute Layer 1 and Layer 2 network troubleshooting with TCP/IP analysis to identify and resolve connectivity issues, minimizing equipment downtime</li>
+            </ul>
+        </div>
+
+        <!-- Axcess.io -->
+        <div class="exp-entry">
+            <div class="exp-header">
+                <h3>Cloud Engineer / Site Reliability Engineer</h3>
+                <span class="date">Jun 2021 – Aug 2023</span>
+            </div>
+            <div class="exp-subheader">
+                <span>Axcess.io</span>
+                <span>Bangalore, India</span>
+            </div>
+            <ul class="exp-bullets">
+                <li>Conducted an AWS Well-Architected Review that <strong>cut infrastructure costs by 40%</strong> (~$120K annual savings) and <strong>improved application performance by 60%</strong> through right-sizing, caching, and architectural optimization</li>
+                <li>Engineered EKS container networking with custom VPC CNI plugins and pod subnet strategies, <strong>optimizing IP utilization by 50%</strong> and enabling seamless scaling for 200+ microservices</li>
+                <li>Architected and deployed a production-grade 3-tier infrastructure, migrating legacy systems to AWS Managed Services and <strong>improving system reliability by 30%</strong></li>
+                <li>Built end-to-end CI/CD pipelines using AWS CodePipeline (CodeCommit, CodeBuild, CodeDeploy) to deploy Docker images to ECS, <strong>reducing deployment time from hours to under 10 minutes</strong></li>
+                <li>Implemented IAM controls with least-privilege policies, KMS encryption, and Secrets Manager rotation, achieving <strong>full compliance</strong> with organizational security standards</li>
+                <li>Configured CloudTrail for security auditing, compliance monitoring, and API call tracking across all AWS accounts</li>
+                <li>Managed real-time monitoring and alerting infrastructure with Grafana, Pingdom, and Kibana, <strong>reducing MTTR by 45%</strong> across production services</li>
+                <li>Directed continuous deployment processes and incident response procedures, maintaining <strong>99.9% uptime</strong> for mission-critical microservice applications</li>
+            </ul>
+        </div>
+
+        <!-- WMU -->
+        <div class="exp-entry">
+            <div class="exp-header">
+                <h3>Student IT Technician</h3>
+                <span class="date">Sep 2023 – Dec 2025</span>
+            </div>
+            <div class="exp-subheader">
+                <span>Western Michigan University</span>
+                <span>Kalamazoo, MI</span>
+            </div>
+            <ul class="exp-bullets">
+                <li>Managed the full asset lifecycle for <strong>500+ devices</strong> (Windows and Mac), including enrollment, onboarding, and inventory tracking using Snipe-IT</li>
+                <li>Led the migration and upgrade of the Snipe-IT asset management platform, consolidating device tracking into a centralized system</li>
+                <li>Provided Help Desk support including network troubleshooting, DHCP device registration, and wireless configuration diagnostics</li>
+                <li>Spearheaded the implementation of new software systems for automated device management and reporting</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ==================== PAGE 2 ==================== -->
+    <div class="page-break"></div>
+
+    <!-- PROJECTS -->
+    <div class="section">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="project-entry">
+            <h4>AWS Well-Architected Review</h4>
+            <p>Conducted a full 5-pillar assessment (Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization) on production workloads. Identified 23 architectural gaps and implemented remediation strategies that delivered 40% cost savings and 60% performance improvement.</p>
+            <p class="project-tags">AWS | Well-Architected Framework | Cost Optimization | Architecture</p>
+        </div>
+
+        <div class="project-entry">
+            <h4>AWS EKS Network Optimization for Enterprise</h4>
+            <p>Designed and implemented a custom networking solution for Amazon EKS at enterprise scale. Engineered VPC CNI plugins with pod subnet allocation strategies, optimizing IP address utilization by 50% and enabling seamless inter-pod communication for 200+ microservices.</p>
+            <p class="project-tags">Amazon EKS | VPC CNI | Kubernetes | Enterprise Networking</p>
+        </div>
+
+        <div class="project-entry">
+            <h4>3-Tier Cloud Architecture Deployment (Terraform & CloudFormation)</h4>
+            <p>Architected and deployed a production-grade 3-tier infrastructure (web, application, database) using both Terraform and AWS CloudFormation. Implemented IaC best practices including remote state management, modular design, and automated multi-environment provisioning.</p>
+            <p class="project-tags">Terraform | CloudFormation | IaC | Multi-Environment</p>
+        </div>
+
+        <div class="project-entry">
+            <h4>Master & Child CloudFormation Templates (VPC, EC2, ECS, EKS)</h4>
+            <p>Built a modular CloudFormation architecture using nested (master/child) templates for reusable infrastructure provisioning. Master template orchestrates child stacks for networking, compute, containers, and security — enabling consistent deployments across multiple AWS accounts and regions.</p>
+            <p class="project-tags">CloudFormation | Nested Stacks | VPC | EC2 | ECS | EKS</p>
+        </div>
+
+        <div class="project-entry">
+            <h4>ECS CI/CD Pipeline with AWS CodePipeline</h4>
+            <p>Built an end-to-end CI/CD pipeline using AWS CodePipeline to automate the build, test, and deployment of Docker images to Amazon ECS. Implemented blue/green deployment strategy with automated rollback, reducing deployment time from hours to under 10 minutes.</p>
+            <p class="project-tags">AWS CodePipeline | CodeBuild | Docker | ECS | Blue/Green Deployment</p>
+        </div>
+
+        <div class="project-entry">
+            <h4>Snipe-IT Asset Management Migration & Upgrade</h4>
+            <p>Led the migration and upgrade of Snipe-IT at Western Michigan University. Managed data migration, server configuration, and deployment to support inventory tracking and lifecycle management for 500+ devices across the university IT department.</p>
+            <p class="project-tags">Snipe-IT | Linux | Asset Management | Data Migration</p>
+        </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="edu-entry">
+            <div class="edu-header">
+                <h3>Master of Science in Cyber Security</h3>
+                <span class="date">Dec 2025</span>
+            </div>
+            <p class="edu-detail">Western Michigan University, Kalamazoo, MI — GPA: 3.83</p>
+            <p class="edu-courses">Relevant Coursework: Network Security, Cloud Security Architecture, Cryptography, Vulnerability Assessment, Security Compliance & Governance, Incident Response</p>
+        </div>
+    </div>
+
+    <!-- CERTIFICATIONS -->
+    <div class="section">
+        <h2 class="section-title">Certifications</h2>
+        <ul class="cert-list">
+            <li><strong>AWS Certified Security – Specialty</strong> — Amazon Web Services (Valid: Dec 2024 – Dec 2027)</li>
+            <li><strong>CompTIA Security+</strong> — CompTIA (Valid: Jan 2023 – Jan 2027)</li>
+        </ul>
+    </div>
+
+    <!-- ADDITIONAL -->
+    <div class="section">
+        <h2 class="section-title">Leadership & Additional</h2>
+        <ul class="exp-bullets">
+            <li>On-the-Job Training (OJT) Lead at AWS — responsible for onboarding and training all new datacenter technicians</li>
+            <li>Class Representative and Placement Coordinator, Electrical & Electronics Dept., NIE Institute of Technology (2020–2021)</li>
+            <li>Member of Asset Enabler team at Axcess Tech Systems, managing asset lifecycle and hardware provisioning (2022–2023)</li>
+        </ul>
+    </div>
+
+</body>
+</html>

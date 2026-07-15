@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>darshan@cloud:~ Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Boot Screen -->
+    <div class="boot-screen" id="boot-screen">
+        <div class="boot-container">
+            <div class="boot-lines" id="boot-lines"></div>
+            <div class="boot-progress">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <p class="boot-status" id="boot-status">Initializing...</p>
+        </div>
+    </div>
+
+    <!-- Scanline overlay -->
+    <div class="scanline"></div>
+
+    <!-- Terminal Window -->
+    <div class="terminal-frame">
+        <!-- Terminal Title Bar -->
+        <div class="terminal-titlebar">
+            <div class="terminal-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+            </div>
+            <span class="terminal-path">darshan@cloud:~/portfolio</span>
+            <nav class="terminal-nav" id="terminal-nav">
+                <a href="#hero" class="nav-cmd">~</a>
+                <a href="#about" class="nav-cmd">about</a>
+                <a href="#experience" class="nav-cmd">exp</a>
+                <a href="#skills" class="nav-cmd">skills</a>
+                <a href="#projects" class="nav-cmd">projects</a>
+                <a href="#certs" class="nav-cmd">certs</a>
+                <a href="#contact" class="nav-cmd">contact</a>
+            </nav>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <span class="theme-icon" id="theme-icon">&#9790;</span>
+            </button>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+                <span>&#9776;</span>
+            </button>
+        </div>
+
+        <!-- Terminal Body -->
+        <main class="terminal-body">
+
+            <!-- Hero / Boot Section -->
+            <section class="term-section" id="hero">
+                <div class="boot-sequence">
+                    <p class="system-line"><span class="dim">[system]</span> initializing portfolio v2.0...</p>
+                    <p class="system-line"><span class="dim">[system]</span> loading modules: aws, kubernetes, terraform...</p>
+                    <p class="system-line"><span class="dim">[system]</span> connection established <span class="success">&#10004;</span></p>
+                </div>
+                <div class="hero-content">
+                    <div class="hero-left">
+                        <div class="ascii-border">
+                            <pre class="ascii-art">
+ ____                 _                   ____        _   _     _     _     
+|  _ \  __ _ _ __ ___| |__   __ _ _ __   / ___|  __ _| |_| |__ (_)___| |__  
+| | | |/ _` | '__/ __| '_ \ / _` | '_ \  \___ \ / _` | __| '_ \| / __| '_ \ 
+| |_| | (_| | |  \__ \ | | | (_| | | | |  ___) | (_| | |_| | | | \__ \ | | |
+|____/ \__,_|_|  |___/_| |_|\__,_|_| |_| |____/ \__,_|\__|_| |_|_|___/_| |_|
+                            </pre>
+                        </div>
+                        <p class="prompt-line"><span class="prompt">$</span> whoami</p>
+                        <h1 class="hero-name">Darshan Sathish</h1>
+                        <p class="prompt-line"><span class="prompt">$</span> cat role.txt</p>
+                        <h2 class="hero-role">Cloud Security & Infrastructure Engineer</h2>
+                        <p class="prompt-line"><span class="prompt">$</span> echo $MISSION</p>
+                        <p class="hero-desc">Building secure, reliable, and cost-effective cloud solutions with expertise in AWS Security, Kubernetes, and datacenter operations. M.S. Cyber Security | AWS Security Specialty certified. Passionate about cloud security, automation, and operational excellence.</p>
+                        <div class="hero-links">
+                            <a href="#contact" class="term-btn">[contact]</a>
+                            <a href="#experience" class="term-btn">[view_work]</a>
+                        </div>
+                    </div>
+                    <div class="hero-right">
+                        <div class="profile-frame">
+                            <div class="profile-label">// profile.jpg</div>
+                            <img src="profile.jpg" alt="Darshan Sathish" class="profile-image">
+                        </div>
+                        <div class="mini-terminal">
+                            <p><span class="prompt">$</span> <span id="typing-text"></span><span class="cursor">_</span></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="term-section" id="about">
+                <div class="section-header">
+                    <span class="prompt">$</span> cat about.md
+                </div>
+                <div class="section-content">
+                    <div class="output-block">
+                        <p>Cloud security and infrastructure professional with hands-on experience spanning datacenter operations, cloud architecture, and site reliability engineering.</p>
+                        <p>Hold an M.S. in Cyber Security from Western Michigan University (GPA: 3.83) along with an AWS Security Specialty certification. Apply a security-first mindset to every infrastructure decision—from IAM policy design to network segmentation and encryption at rest.</p>
+                        <p>At AWS, led large-scale rack onboarding operations, directing teams of 8+ technicians. As a Cloud Engineer at Axcess.io, implemented comprehensive security frameworks including IAM controls, KMS encryption, Secrets Manager, and CloudTrail auditing while conducting Well-Architected Reviews that delivered measurable cost and performance improvements.</p>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-block">
+                            <span class="stat-value">1,200+</span>
+                            <span class="stat-key">racks_onboarded</span>
+                        </div>
+                        <div class="stat-block">
+                            <span class="stat-value">40%</span>
+                            <span class="stat-key">cost_reduction</span>
+                        </div>
+                        <div class="stat-block">
+                            <span class="stat-value">60%</span>
+                            <span class="stat-key">perf_improvement</span>
+                        </div>
+                        <div class="stat-block">
+                            <span class="stat-value">500+</span>
+                            <span class="stat-key">devices_managed</span>
+                        </div>
+                    </div>
+                    <div class="resume-download">
+                        <a href="resume.html" class="term-btn resume-btn" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                            [view_resume]
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section class="term-section" id="experience">
+                <div class="section-header">
+                    <span class="prompt">$</span> cat experience.log | sort --reverse
+                </div>
+                <div class="section-content">
+                    <!-- AWS -->
+                    <div class="exp-block">
+                        <div class="exp-header">
+                            <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" class="exp-logo aws-logo"></a>
+                            <div class="exp-title">
+                                <h3>Datacenter Technician</h3>
+                                <span class="exp-company">@ Amazon Web Services (AWS)</span>
+                            </div>
+                            <span class="exp-date">05/2025 - present</span>
+                        </div>
+                        <div class="exp-location"><span class="dim"># location:</span> New Carlisle, IN, USA</div>
+                        <ul class="exp-details">
+                            <li><span class="bullet">-</span> Perform rack-and-stack operations, hardware break-fix, and equipment lifecycle management for Trn2p, Trn3p, B300, and storage racks</li>
+                            <li><span class="bullet">-</span> Execute Layer 1 and Layer 2 network troubleshooting with TCP/IP analysis to identify and resolve connectivity issues, reducing equipment downtime</li>
+                            <li><span class="bullet">-</span> Build, configure, wipe, and install operating systems on network switches following secure deployment and decommissioning procedures</li>
+                            <li><span class="bullet">-</span> Enforce physical security protocols and access controls during rack installation, ensuring compliance with datacenter security standards</li>
+                            <li><span class="bullet">-</span> Direct a team of 8+ technicians to receive and hand off 1,200 racks during Q3 2025 as the primary point of contact for large-scale onboarding</li>
+                            <li><span class="bullet">-</span> Develop Tampermonkey automation scripts to streamline hardware-receiving and break-fix workflows</li>
+                            <li><span class="bullet">-</span> Author SOPs and Operational Readiness Documents for site readiness and rack receiving, embedding security best practices</li>
+                            <li><span class="bullet">-</span> Serve as designated OJT Lead for all new hires, cross-training Rack Handoff and DCO teams on secure handling procedures</li>
+                            <li><span class="bullet">-</span> Manage secure installation and customer handoff of 50+ server racks daily while maintaining SLA and security compliance</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="tag">rack-and-stack</span>
+                            <span class="tag">break-fix</span>
+                            <span class="tag">switch-building</span>
+                            <span class="tag">network-security</span>
+                            <span class="tag">tcp/ip</span>
+                            <span class="tag">automation</span>
+                            <span class="tag">physical-security</span>
+                            <span class="tag">leadership</span>
+                        </div>
+                    </div>
+
+                    <!-- WMU -->
+                    <div class="exp-block">
+                        <div class="exp-header">
+                            <a href="https://wmich.edu/" target="_blank" rel="noopener noreferrer"><img src="wmu-logo.png" alt="WMU" class="exp-logo"></a>
+                            <div class="exp-title">
+                                <h3>Student IT Technician</h3>
+                                <span class="exp-company">@ Western Michigan University</span>
+                            </div>
+                            <span class="exp-date">09/2023 - 12/2025</span>
+                        </div>
+                        <div class="exp-location"><span class="dim"># location:</span> Kalamazoo, MI, USA</div>
+                        <ul class="exp-details">
+                            <li><span class="bullet">-</span> Provided technical troubleshooting and resolution for laptops and other end-user devices at the Help Desk</li>
+                            <li><span class="bullet">-</span> Performed network troubleshooting, DHCP device registration, and wireless configuration diagnostics</li>
+                            <li><span class="bullet">-</span> Managed the full asset lifecycle for 500+ devices (Windows and Mac), including enrollment, onboarding, and inventory tracking</li>
+                            <li><span class="bullet">-</span> Spearheaded the implementation of new software systems for centralized device management</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="tag">dhcp</span>
+                            <span class="tag">networking</span>
+                            <span class="tag">asset-mgmt</span>
+                        </div>
+                    </div>
+
+                    <!-- Axcess.io -->
+                    <div class="exp-block">
+                        <div class="exp-header">
+                            <a href="https://axcess.io" target="_blank" rel="noopener noreferrer"><img src="axcess-logo.png" alt="Axcess.io" class="exp-logo"></a>
+                            <div class="exp-title">
+                                <h3>Cloud Engineer / SRE</h3>
+                                <span class="exp-company">@ Axcess.io</span>
+                            </div>
+                            <span class="exp-date">06/2021 - 08/2023</span>
+                        </div>
+                        <div class="exp-location"><span class="dim"># location:</span> Bangalore, KA, India</div>
+                        <ul class="exp-details">
+                            <li><span class="bullet">-</span> Engineered Kubernetes clusters and optimized databases to support scalable microservice applications</li>
+                            <li><span class="bullet">-</span> Conducted an AWS Well-Architected Review, achieving a 40% cost reduction and a 60% performance improvement</li>
+                            <li><span class="bullet">-</span> Architected a 3-tier infrastructure and migrated legacy systems to AWS Managed Services, improving reliability by 30%</li>
+                            <li><span class="bullet">-</span> Implemented IAM controls with least-privilege policies, managing secrets via KMS and Secrets Manager</li>
+                            <li><span class="bullet">-</span> Engineered EKS container networking with custom VPC CNI plugins, optimizing IP address utilization by 50%</li>
+                            <li><span class="bullet">-</span> Configured CloudTrail for security auditing, compliance monitoring, and resource change tracking</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="tag">aws</span>
+                            <span class="tag">kubernetes</span>
+                            <span class="tag">terraform</span>
+                            <span class="tag">grafana</span>
+                            <span class="tag">docker</span>
+                            <span class="tag">iam</span>
+                            <span class="tag">eks</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="term-section" id="skills">
+                <div class="section-header">
+                    <span class="prompt">$</span> ls -la ~/skills/
+                </div>
+                <div class="section-content">
+                    <div class="skills-tree">
+                        <div class="skill-dir">
+                            <div class="dir-name"><span class="dir-icon">&#128193;</span> cloud/</div>
+                            <div class="dir-contents">
+                                <span>AWS (EC2, RDS, EKS, ALB, CloudWatch)</span>
+                                <span>Cloud Migration & Architecture</span>
+                                <span>Well-Architected Reviews</span>
+                                <span>Cost Optimization</span>
+                                <span>3-Tier Architecture</span>
+                            </div>
+                        </div>
+                        <div class="skill-dir">
+                            <div class="dir-name"><span class="dir-icon">&#128193;</span> containers/</div>
+                            <div class="dir-contents">
+                                <span>Kubernetes / EKS</span>
+                                <span>Docker</span>
+                                <span>Microservices</span>
+                                <span>VPC CNI Plugins</span>
+                                <span>Container Networking</span>
+                            </div>
+                        </div>
+                        <div class="skill-dir">
+                            <div class="dir-name"><span class="dir-icon">&#128193;</span> devops/</div>
+                            <div class="dir-contents">
+                                <span>Terraform</span>
+                                <span>Jenkins / GitHub Actions</span>
+                                <span>Azure DevOps</span>
+                                <span>Bash / Python / Go</span>
+                                <span>Cron / YAML</span>
+                            </div>
+                        </div>
+                        <div class="skill-dir">
+                            <div class="dir-name"><span class="dir-icon">&#128193;</span> security/</div>
+                            <div class="dir-contents">
+                                <span>IAM (Roles, Policies, Groups)</span>
+                                <span>AWS KMS & Secrets Manager</span>
+                                <span>CloudTrail Auditing</span>
+                                <span>Cloud Security Posture Management</span>
+                                <span>Least Privilege Principle</span>
+                                <span>Network Security & Segmentation</span>
+                                <span>Encryption (at rest & in transit)</span>
+                                <span>Vulnerability Assessment</span>
+                                <span>Security Compliance & Governance</span>
+                            </div>
+                        </div>
+                        <div class="skill-dir">
+                            <div class="dir-name"><span class="dir-icon">&#128193;</span> networking/</div>
+                            <div class="dir-contents">
+                                <span>TCP/IP</span>
+                                <span>DNS</span>
+                                <span>Wireshark</span>
+                                <span>DHCP</span>
+                                <span>Layer 1 & 2 Troubleshooting</span>
+                            </div>
+                        </div>
+                        <div class="skill-dir">
+                            <div class="dir-name"><span class="dir-icon">&#128193;</span> monitoring/</div>
+                            <div class="dir-contents">
+                                <span>Grafana</span>
+                                <span>Prometheus</span>
+                                <span>CloudWatch</span>
+                                <span>Pingdom</span>
+                                <span>Kibana</span>
+                                <span>Incident Response</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section class="term-section" id="projects">
+                <div class="section-header">
+                    <span class="prompt">$</span> find ~/projects -type f -name "*.md" | head -9
+                </div>
+                <div class="section-content">
+                    <div class="projects-list">
+                        <div class="project-entry">
+                            <div class="project-name"><span class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span> aws-well-architected-review.md</div>
+                            <p class="project-desc">Conducted a comprehensive AWS Well-Architected Review across all five pillars (Operational Excellence, Security, Reliability, Performance Efficiency, and Cost Optimization), identifying architectural gaps and implementing recommendations that reduced infrastructure costs by 40% and improved application performance by 60%.</p>
+                            <div class="exp-tags">
+                                <span class="tag">aws</span>
+                                <span class="tag">well-architected</span>
+                                <span class="tag">cost-optimization</span>
+                                <span class="tag">architecture</span>
+                            </div>
+                            <a href="https://github.com/darshan/aws-well-architected-review" class="github-link" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg> View on GitHub</a>
+                        </div>
+                        <div class="project-entry">
+                            <div class="project-name"><span class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span> eks-network-optimization.md</div>
+                            <p class="project-desc">Designed and implemented a custom networking solution for Amazon EKS in an enterprise environment. Engineered VPC CNI plugins with pod subnet allocation strategies, optimizing IP address utilization by 50% and enhancing inter-pod communication for large-scale microservice deployments.</p>
+                            <div class="exp-tags">
+                                <span class="tag">eks</span>
+                                <span class="tag">vpc-cni</span>
+                                <span class="tag">networking</span>
+                                <span class="tag">enterprise</span>
+                            </div>
+                            <a href="https://github.com/darshan/eks-network-optimization" class="github-link" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg> View on GitHub</a>
+                        </div>
+                        <div class="project-entry">
+                            <div class="project-name"><span class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span> 3-tier-iac-deployment.md</div>
+                            <p class="project-desc">Architected and deployed a production-grade 3-tier cloud infrastructure (web, application, and database tiers) using both Terraform and AWS CloudFormation. Implemented Infrastructure as Code best practices including state management, modular design, and automated provisioning across multiple environments.</p>
+                            <div class="exp-tags">
+                                <span class="tag">terraform</span>
+                                <span class="tag">cloudformation</span>
+                                <span class="tag">3-tier</span>
+                                <span class="tag">iac</span>
+                            </div>
+                            <a href="https://github.com/darshan/3-tier-iac-deployment" class="github-link" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg> View on GitHub</a>
+                        </div>
+                        <div class="project-entry">
+                            <div class="project-name"><span class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span> nested-cloudformation-templates.md</div>
+                            <p class="project-desc">Built a modular CloudFormation architecture using master and child (nested) templates for reusable infrastructure provisioning. The master template orchestrates child stacks for networking, compute, storage, and security resources, enabling consistent deployments across multiple AWS accounts and regions.</p>
+                            <div class="exp-tags">
+                                <span class="tag">cloudformation</span>
+                                <span class="tag">nested-stacks</span>
+                                <span class="tag">modular-iac</span>
+                                <span class="tag">aws</span>
+                            </div>
+                            <a href="https://github.com/darshan/nested-cloudformation-templates" class="github-link" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg> View on GitHub</a>
+                        </div>
+                        <div class="project-entry">
+                            <div class="project-name"><span class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M6 12h12M6 16h8"/></svg></span> cloudformation-vpc-ec2.md</div>
+                            <p class="project-desc">Designed CloudFormation templates to provision a fully configured VPC (subnets, route tables, internet gateway, NAT gateway) with EC2 instances, security groups, and auto-scaling configurations for production workloads.</p>
+                            <div class="exp-tags">
+                                <span class="tag">cloudformation</span>
+                                <span class="tag">vpc</span>
+                                <span class="tag">ec2</span>
+                                <span class="tag">networking</span>
+                            </div>
+                            <a href="https://github.com/darshan/cloudformation-vpc-ec2" class="github-link" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg> View on GitHub</a>
+                        </div>
+                        <div class="project-entry">
+                            <div class="project-name"><span class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span> cloudformation-ecs.md</div>
+                            <p class="project-desc">Created CloudFormation templates for deploying containerized applications on Amazon ECS with Fargate, including task definitions, service configurations, ALB integration, and IAM roles for secure container execution.</p>
+                            <div class="exp-tags">
+                                <span class="tag">cloudformation</span>
+                                <span class="tag">ecs</span>
+                                <span class="tag">fargate</span>
+                                <span class="tag">containers</span>
+                            </div>
+                            <a href="https://github.com/darshan/cloudformation-ecs" class="github-link" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg> View on GitHub</a>
+                        </div>
+                        <div class="project-entry">
+                            <div class="project-name"><span class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span> cloudformation-eks.md</div>
+                            <p class="project-desc">Developed CloudFormation templates for provisioning Amazon EKS clusters with managed node groups, VPC networking, RBAC configurations, and add-ons for monitoring and logging in a production-ready Kubernetes environment.</p>
+                            <div class="exp-tags">
+                                <span class="tag">cloudformation</span>
+                                <span class="tag">eks</span>
+                                <span class="tag">kubernetes</span>
+                                <span class="tag">iac</span>
+                            </div>
+                            <a href="https://github.com/darshan/cloudformation-eks" class="github-link" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg> View on GitHub</a>
+                        </div>
+                        <div class="project-entry">
+                            <div class="project-name"><span class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/></svg></span> ecs-cicd-pipeline.md</div>
+                            <p class="project-desc">Built an end-to-end CI/CD pipeline using AWS CodePipeline to automate the build, test, and deployment of Docker images to Amazon ECS containers. Integrated CodeCommit, CodeBuild, and CodeDeploy for seamless continuous delivery with blue/green deployments and automated rollback capabilities.</p>
+                            <div class="exp-tags">
+                                <span class="tag">aws-codepipeline</span>
+                                <span class="tag">docker</span>
+                                <span class="tag">ecs</span>
+                                <span class="tag">ci-cd</span>
+                                <span class="tag">devops</span>
+                            </div>
+                            <a href="https://github.com/darshan/ecs-cicd-pipeline" class="github-link" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg> View on GitHub</a>
+                        </div>
+                        <div class="project-entry">
+                            <div class="project-name"><span class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></span> snipe-it-migration.md</div>
+                            <p class="project-desc">Led the migration and upgrade of Snipe-IT, an open-source IT asset management tool, at Western Michigan University. Managed data migration, system configuration, and deployment to support inventory tracking and lifecycle management for 500+ devices across the university.</p>
+                            <div class="exp-tags">
+                                <span class="tag">snipe-it</span>
+                                <span class="tag">asset-management</span>
+                                <span class="tag">migration</span>
+                                <span class="tag">linux</span>
+                            </div>
+                            <a href="https://github.com/darshan/snipe-it-migration" class="github-link" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg> View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certifications Section -->
+            <section class="term-section" id="certs">
+                <div class="section-header">
+                    <span class="prompt">$</span> gpg --list-keys ~/certs/
+                </div>
+                <div class="section-content">
+                    <div class="certs-list">
+                        <div class="cert-entry">
+                            <img src="wmu-logo.png" alt="WMU" class="cert-logo">
+                            <div class="cert-info">
+                                <h3>M.S. Cyber Security</h3>
+                                <span class="cert-org">Western Michigan University</span>
+                                <span class="cert-validity"><span class="dim">// graduated:</span> Dec 2025 | GPA: 3.83</span>
+                            </div>
+                        </div>
+                        <div class="cert-entry">
+                            <img src="aws-logo.png" alt="AWS" class="cert-logo">
+                            <div class="cert-info">
+                                <h3>AWS Security Specialty</h3>
+                                <span class="cert-org">Amazon Web Services</span>
+                                <span class="cert-validity"><span class="dim">// valid:</span> Dec 2024 – Dec 2027</span>
+                            </div>
+                        </div>
+                        <div class="cert-entry">
+                            <img src="comptia-logo.png" alt="CompTIA" class="cert-logo">
+                            <div class="cert-info">
+                                <h3>CompTIA Security+</h3>
+                                <span class="cert-org">CompTIA</span>
+                                <span class="cert-validity"><span class="dim">// valid:</span> Jan 2023 – Jan 2027</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="term-section" id="contact">
+                <div class="section-header">
+                    <span class="prompt">$</span> cat ~/.contact
+                </div>
+                <div class="section-content">
+                    <p class="contact-intro">Open to opportunities in Cloud Security Engineering, Site Reliability Engineering, and DevOps. Let's connect.</p>
+                    <div class="contact-list">
+                        <a href="mailto:darshansathish075@gmail.com" class="contact-entry">
+                            <svg class="contact-logo-img contact-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <span class="contact-key">email</span>
+                            <span class="contact-sep">=</span>
+                            <span class="contact-val">darshansathish075@gmail.com</span>
+                        </a>
+                        <a href="tel:+12693640693" class="contact-entry">
+                            <svg class="contact-logo-img contact-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <span class="contact-key">phone</span>
+                            <span class="contact-sep">=</span>
+                            <span class="contact-val">269-364-0693</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/darshansathish/" class="contact-entry" target="_blank" rel="noopener noreferrer">
+                            <svg class="contact-logo-img contact-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            <span class="contact-key">linkedin</span>
+                            <span class="contact-sep">=</span>
+                            <span class="contact-val">linkedin.com/in/darshansathish</span>
+                        </a>
+                        <a href="https://github.com/" class="contact-entry" target="_blank" rel="noopener noreferrer">
+                            <svg class="contact-logo-img contact-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                            <span class="contact-key">github</span>
+                            <span class="contact-sep">=</span>
+                            <span class="contact-val">github.com/darshan</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <div class="term-footer">
+                <p><span class="prompt">$</span> echo "© 2025 Darshan Sathish"</p>
+                <p class="dim">© 2025 Darshan Sathish</p>
+                <p class="blink-line"><span class="prompt">$</span> <span class="cursor">_</span></p>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Command Input Bar -->
+    <div class="command-bar" id="command-bar">
+        <div class="command-output" id="command-output"></div>
+        <div class="command-input-wrapper">
+            <span class="command-prompt">visitor@darshan:~$</span>
+            <input type="text" class="command-input" id="command-input" placeholder="type 'help' for commands..." autocomplete="off" spellcheck="false">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
